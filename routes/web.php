@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get("/login",'User\UserController@loginShow');//用户登录
+Route::post("login",'User\UserController@login');//用户登录
+Route::get("/user/center",'User\UserController@center');//用户中心
