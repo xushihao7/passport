@@ -46,9 +46,9 @@
             dataType:   'json',
             success :   function(d){
                alert(d.msg)
-                if(d.error==0){
-                  location.href('{{$redirect}}')
-                }
+               if(d.error==0){
+                   location.href="{{$redirect}}"
+               }
             }
         });
     })

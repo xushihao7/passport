@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     //
     public  function  loginShow(Request $request){
-        $redirect=urldecode($request->input("redirect")) ?? env("SHOP_URL");
+        $redirect=$request->input("redirect") ?? env("SHOP_URL");
         //var_dump($redirect);die;
         $data=[
             'redirect'=>$redirect
