@@ -60,12 +60,11 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2891986">
-              <caret line="76" column="35" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
+            <state vertical-scroll-proportion="1.7264808">
+              <caret line="72" column="40" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
               <folding>
                 <element signature="e#45#69#0#PHP" expanded="true" />
                 <element signature="e#227#482#0#PHP" expanded="false" />
-                <element signature="e#504#1640#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -74,7 +73,7 @@
       <file leaf-file-name="VerifyCsrfToken.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.1875">
+            <state vertical-scroll-proportion="-11.46875">
               <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
               <folding />
             </state>
@@ -418,7 +417,6 @@
           <folding>
             <element signature="e#45#69#0#PHP" expanded="true" />
             <element signature="e#227#482#0#PHP" expanded="false" />
-            <element signature="e#504#1640#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -509,14 +507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.1875">
-          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.1875">
@@ -525,14 +515,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.46875">
+          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/User/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2891986">
-          <caret line="76" column="35" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
+        <state vertical-scroll-proportion="1.7264808">
+          <caret line="72" column="40" selection-start-line="72" selection-start-column="40" selection-end-line="72" selection-end-column="40" />
           <folding>
             <element signature="e#45#69#0#PHP" expanded="true" />
             <element signature="e#227#482#0#PHP" expanded="false" />
-            <element signature="e#504#1640#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

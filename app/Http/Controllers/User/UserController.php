@@ -36,9 +36,9 @@ class UserController extends Controller
                     'error'=>0,
                     'msg'=>'登录成功'
                 ];
-                $key="s:token:".$res->uid;
-                Redis::set($key,$token);
-                Redis::expire($key,83600);
+                $key="h:token:".$res->uid;
+                Redis::hSet($key,'web',$token);
+                Redis::hDel($key,"android");
             }else{
                 $response=[
                     'error'=>5001,
@@ -68,9 +68,9 @@ class UserController extends Controller
             if(password_verify($pwd,$res->pwd)){
                 $uid=$res->uid;
                 $token=substr(md5(time().mt_rand(1,99999)),10,10);
-                $key="str:token:".$uid;
-                Redis::set($key,$token);
-                Redis::expire($key,83600);
+                $key="h:token:".$uid;
+                Redis::hSet($key,"android",$token);
+                Redis::hDel($key,"web");
                 $response=[
                     'error'=>0,
                     'msg'=>'登录成功',
