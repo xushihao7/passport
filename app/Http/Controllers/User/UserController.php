@@ -53,7 +53,63 @@ class UserController extends Controller
         }
         return $response;
     }
+    //passport注册
+    public  function regShow(Request $request){
+        $redirect=$request->input("redirect") ?? env("SHOP_URL");
+        //var_dump($redirect);die;
+        $data=[
+            'redirect'=>$redirect
+        ];
+        return view("user.register",$data);
+    }
+    public  function  register(Request $request){
+       $username=$request->input("name");
+       $pwd=$request->input("pwd");
+       $email=$request->input("email");
+       $age=$request->input("age");
+       $where=[
+           'name'=>$username
+       ];
+       $count=UserModel::where($where)->count();
+       if($count>0){
+           $response=[
+               'error'=>5001,
+               'msg'=>"账号已经存在"
+           ];
+       }else{
+           $pwd=password_hash($pwd,PASSWORD_BCRYPT);
+           $data=[
+               'name'=>$username,
+               'pwd'=>$pwd,
+               'age'=>$age,
+               'email'=>$email,
+               'reg_time'=>time()
+           ];
+           $uid=UserModel::insertGetId($data);
+           if($uid){
+               $response=[
+                   'error'=>'0',
+                   'msg'=>'注册成功'
+               ];
+               $token=substr(md5(time().mt_rand(1,99999)),10,10);
+               setcookie("uid",$uid,time()+86400,"/",'xushihao.com',false,true);
+               setcookie("uname",$username,time()+86400,"/",'xushihao.com',false,true);
+               setcookie("token",$token,time()+86400,"/","xushihao.com",false,true);
+               $key="h:token:".$uid;
+               Redis::del($key,"android");
+               Redis::hSet($key,'web',$token);
+           }else{
+               $response=[
+                   'error'=>'5001',
+                   'msg'=>'注册失败'
+               ];
+           }
 
+       }
+       return $response;
+
+
+   }
     //api possport登录
     public  function  apiLogin(Request $request){
         $uname=$request->input("name");
