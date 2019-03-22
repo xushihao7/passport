@@ -37,8 +37,8 @@ class UserController extends Controller
                     'msg'=>'登录成功'
                 ];
                 $key="h:token:".$res->uid;
-                Redis::hSet($key,'web',$token);
                 Redis::del($key,"android");
+                Redis::hSet($key,'web',$token);
             }else{
                 $response=[
                     'error'=>5001,
@@ -69,8 +69,8 @@ class UserController extends Controller
                 $uid=$res->uid;
                 $token=substr(md5(time().mt_rand(1,99999)),10,10);
                 $key="h:token:".$uid;
+                Redis::del($key);
                 Redis::hSet($key,"android",$token);
-                Redis::del($key,"web");
                 $response=[
                     'error'=>0,
                     'msg'=>'登录成功',
