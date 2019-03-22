@@ -147,4 +147,11 @@ class UserController extends Controller
         }
         return $response;
     }
+    //退出
+    public  function  quit(){
+        setcookie("uid",null,time()-1,"/",'xushihao.com',false,true);
+        setcookie("token",null,time()-1,"/","xushihao.com",false,true);
+        echo "退出成功";
+        header("refresh:1,url=http://www.xushihao.com");
+    }
 }
