@@ -130,7 +130,8 @@ class UserController extends Controller
                 $response=[
                     'error'=>0,
                     'msg'=>'登录成功',
-                    'token'=>$token
+                    'token'=>$token ,
+                    'uid'=>$uid
                 ];
 
             }else{
