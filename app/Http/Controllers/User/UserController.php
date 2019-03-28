@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redis;
 class UserController extends Controller
 {
-    //
+    //passport登录 web端
     public  function  loginShow(Request $request){
         $redirect=$request->input("redirect") ?? env("SHOP_URL");
         //var_dump($redirect);die;
@@ -53,7 +53,7 @@ class UserController extends Controller
         }
         return $response;
     }
-    //passport注册
+    //passport注册 web端
     public  function regShow(Request $request){
         $redirect=$request->input("redirect") ?? env("SHOP_URL");
         //var_dump($redirect);die;
@@ -110,7 +110,7 @@ class UserController extends Controller
 
 
    }
-    //api possport登录
+    // possport登录 app端
     public  function  apiLogin(Request $request){
         $uname=$request->input("name");
         $pwd=$request->input("pwd");
