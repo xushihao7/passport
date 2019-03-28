@@ -131,6 +131,7 @@ class UserController extends Controller
                     'error'=>0,
                     'msg'=>'登录成功',
                     'token'=>$token ,
+                    'name'=>$res->name,
                     'uid'=>$uid
                 ];
 
